@@ -61,6 +61,8 @@ const equipmentZones = [
   },
 ]
 
+const tiktokProfileUrl = 'https://www.tiktok.com/@afk_yo12'
+
 const navigationItems = [
   { label: 'Зоны', href: '#zones' },
   { label: 'Тарифы', href: '#tariffs' },
@@ -284,6 +286,56 @@ function App() {
                 </dl>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section
+          className="contacts-section"
+          id="contacts"
+          aria-labelledby="contacts-title"
+        >
+          <div className="contacts-heading">
+            <p className="eyebrow contacts-eyebrow">
+              <span className="eyebrow-number">04</span>
+              <span className="eyebrow-divider" aria-hidden="true" />
+              Контакты
+            </p>
+            <h2 className="contacts-title" id="contacts-title">
+              Найди AFK.
+            </h2>
+          </div>
+
+          <div className="contacts-details">
+            <div className="contact-address">
+              <p className="contact-label">Адрес клуба</p>
+              <address>Воинов-Интернационалистов, 28Б</address>
+            </div>
+
+            <div className="contact-social">
+              <p className="contact-label">Официальный TikTok</p>
+              <a
+                className="contact-profile-link"
+                href={tiktokProfileUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span>@afk_yo12</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <p className="contact-direct-copy">
+                Напишите в Direct, чтобы уточнить информацию или забронировать
+                место.
+              </p>
+              <a
+                className="button button-primary contact-direct-button"
+                href={tiktokProfileUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Открыть профиль и написать в Direct
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>

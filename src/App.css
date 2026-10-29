@@ -585,3 +585,330 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+.tariffs-section {
+  padding: clamp(48px, 4vw, 64px) 0 clamp(56px, 6vw, 80px);
+  border-top: 1px solid #262521;
+  scroll-margin-top: 0px;
+}
+
+.tariffs-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.62fr);
+  align-items: end;
+  column-gap: clamp(32px, 8vw, 120px);
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+
+.tariffs-eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: clamp(20px, 2.4vw, 34px);
+}
+
+.tariffs-title {
+  margin: 0;
+  font-size: clamp(3.5rem, 7.1vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.tariffs-description {
+  max-width: 290px;
+  justify-self: end;
+  margin: 0 0 5px;
+  color: #514f49;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.period-selector {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #262521;
+  border-bottom: 1px solid #262521;
+}
+
+.period-button {
+  min-width: 0;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 0;
+  border-left: 1px solid #bcb8ae;
+  color: #514f49;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+.period-button:first-child {
+  border-left: 0;
+}
+
+.period-button:hover {
+  color: #171715;
+  background: #ece9e1;
+}
+
+.period-button.is-selected {
+  color: #f5f3ed;
+  background: #171715;
+}
+
+.tariff-list {
+  border-bottom: 1px solid #262521;
+}
+
+.tariff-row {
+  min-height: 76px;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #bcb8ae;
+}
+
+.tariff-row:last-child {
+  border-bottom: 0;
+}
+
+.tariff-zone-index {
+  color: #a34a32;
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tariff-zone-name {
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(1.05rem, 2.3vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+
+.tariff-price {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tariff-price.is-pending {
+  color: #514f49;
+  font-size: clamp(0.78rem, 1.4vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.school-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+  margin-top: clamp(32px, 3vw, 44px);
+  padding: clamp(26px, 4vw, 48px);
+  color: #f5f3ed;
+  background: #171715;
+}
+
+.school-offer-label {
+  margin: 0 0 24px;
+  color: #d3937f;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.school-offer-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.school-offer-description {
+  margin: 10px 0 0;
+  color: #d4d0c8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.school-offer-conditions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 28px 0 0;
+  padding: 0;
+  color: #d4d0c8;
+  font-size: 0.7rem;
+  list-style: none;
+}
+
+.school-offer-conditions li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.school-offer-conditions li::before {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  background: #c76c50;
+  content: '';
+}
+
+.school-offer-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  color: #d3937f;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+  line-height: 0.95;
+  white-space: nowrap;
+}
+
+.school-offer-price span {
+  margin-bottom: 10px;
+  color: #f5f3ed;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .tariffs-section {
+    padding-top: 34px;
+    padding-bottom: 50px;
+    scroll-margin-top: 24px;
+  }
+
+  .tariffs-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-bottom: 24px;
+  }
+
+  .tariffs-eyebrow {
+    margin-bottom: 22px;
+  }
+
+  .tariffs-title {
+    font-size: clamp(2.4rem, 10.4vw, 4.5rem);
+  }
+
+  .tariffs-description {
+    max-width: 330px;
+    justify-self: start;
+    margin-top: 20px;
+    font-size: 0.88rem;
+  }
+
+  .period-selector {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .period-button {
+    min-height: 52px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #bcb8ae;
+    font-size: 0.7rem;
+  }
+
+  .period-button:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .period-button:nth-child(even) {
+    border-left: 1px solid #bcb8ae;
+  }
+
+  .period-button:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .tariff-row {
+    min-height: 68px;
+    grid-template-columns: 30px minmax(0, 1fr) max-content;
+    gap: 9px;
+  }
+
+  .tariff-zone-name {
+    font-size: clamp(0.96rem, 4.2vw, 1.35rem);
+  }
+
+  .tariff-price {
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+  }
+
+  .tariff-price.is-pending {
+    max-width: 110px;
+    white-space: normal;
+    font-size: 0.73rem;
+    line-height: 1.3;
+  }
+
+  .school-offer {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    margin-top: 24px;
+    padding: 26px 22px;
+  }
+
+  .school-offer-label {
+    margin-bottom: 20px;
+  }
+
+  .school-offer-conditions {
+    gap: 10px 16px;
+    margin-top: 22px;
+    font-size: 0.68rem;
+  }
+
+  .school-offer-price {
+    align-items: flex-start;
+    font-size: clamp(3rem, 13vw, 4.5rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .tariff-row {
+    grid-template-columns: 24px minmax(0, 1fr) max-content;
+    gap: 7px;
+  }
+
+  .tariff-zone-name {
+    font-size: 0.9rem;
+  }
+
+  .tariff-price {
+    font-size: 1.08rem;
+  }
+
+  .tariff-price.is-pending {
+    max-width: 88px;
+    font-size: 0.68rem;
+  }
+
+  .period-button {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 0.66rem;
+  }
+}

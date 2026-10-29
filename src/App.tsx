@@ -38,6 +38,29 @@ const tariffZones: {
 
 const rubleFormatter = new Intl.NumberFormat('ru-RU')
 
+const equipmentZones = [
+  {
+    number: '01',
+    name: 'BOOTCAMP / 3 ROOM',
+    specs: [
+      { label: 'Процессор', value: 'Ryzen 5 7500F', featured: true },
+      { label: 'Видеокарта', value: 'RTX 5070', featured: true },
+      { label: 'Оперативная память', value: '32 GB DDR5' },
+      { label: 'Монитор', value: 'MSI, 27″, 2K, 320 Hz' },
+    ],
+  },
+  {
+    number: '02',
+    name: 'STANDARD',
+    specs: [
+      { label: 'Процессор', value: 'Ryzen 5 5500', featured: true },
+      { label: 'Видеокарта', value: 'RTX 5060', featured: true },
+      { label: 'Оперативная память', value: '16 GB DDR4' },
+      { label: 'Монитор', value: 'MSI, 27″, 2K, 200 Hz' },
+    ],
+  },
+]
+
 const navigationItems = [
   { label: 'Зоны', href: '#zones' },
   { label: 'Тарифы', href: '#tariffs' },
@@ -64,7 +87,7 @@ function App() {
 
         <nav className="primary-nav" aria-label="Основная навигация">
           {navigationItems.map((item) => (
-            <a className="primary-nav-link" href={item.href} key={item.href}>
+            <a className="primary-nav-link" href={item.href} key={item.label}>
               {item.label}
             </a>
           ))}
@@ -216,6 +239,51 @@ function App() {
                 300 ₽
               </p>
             </aside>
+          </div>
+        </section>
+
+        <section
+          className="equipment-section"
+          id="zones"
+          aria-labelledby="equipment"
+        >
+          <div className="equipment-heading">
+            <p className="eyebrow equipment-eyebrow">
+              <span className="eyebrow-number">03</span>
+              <span className="eyebrow-divider" aria-hidden="true" />
+              Игровые зоны
+            </p>
+            <h2 className="equipment-title" id="equipment">
+              Выбери свою
+              <br />
+              зону.
+            </h2>
+            <p className="equipment-description">
+              Характеристики компьютеров зависят от игровой зоны.
+            </p>
+          </div>
+
+          <div className="equipment-cards">
+            {equipmentZones.map((zone) => (
+              <article className="equipment-card" key={zone.number}>
+                <div className="equipment-card-heading">
+                  <span className="equipment-card-number">{zone.number}</span>
+                  <span className="equipment-card-rule" aria-hidden="true" />
+                  <h3 className="equipment-card-title">{zone.name}</h3>
+                </div>
+
+                <dl className="equipment-specs">
+                  {zone.specs.map((spec) => (
+                    <div className="equipment-spec" key={spec.label}>
+                      <dt>{spec.label}</dt>
+                      <dd className={spec.featured ? 'is-featured' : undefined}>
+                        {spec.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            ))}
           </div>
         </section>
       </main>

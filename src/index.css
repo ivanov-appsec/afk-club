@@ -1,5 +1,7 @@
 :root {
-  font-family: system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #171715;
+  background: #f5f3ed;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,6 +17,27 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+body,
+button,
+a {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  color: #f5f3ed;
+  background: #171715;
+}
+
+:focus-visible {
+  outline: 2px solid #a34a32;
+  outline-offset: 4px;
+}
+
 #root {
   min-height: 100vh;
 }
